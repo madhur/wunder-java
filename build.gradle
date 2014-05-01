@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin:'application'
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+       
+    }
+}
+
+mainClassName = "in.co.madhur.wunderjava.Main"
+
+
+dependencies {
+   
+    compile 'com.fasterxml.jackson.core:jackson-core:2.3.0-rc1'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.0-rc1'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.3.0-rc1'
+    compile 'com.squareup.retrofit:retrofit:1.5.0'
+}
+
+dependencies {
+   
+    runtime 'com.fasterxml.jackson.core:jackson-core:2.3.0-rc1'
+    runtime 'com.fasterxml.jackson.core:jackson-databind:2.3.0-rc1'
+    runtime 'com.fasterxml.jackson.core:jackson-annotations:2.3.0-rc1'
+    runtime 'com.squareup.retrofit:retrofit:1.5.0'
+}

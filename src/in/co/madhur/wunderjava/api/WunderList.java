@@ -9,6 +9,10 @@ import in.co.madhur.wunderjava.api.model.WTask;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 
+/**
+ * @author Madhur Ahuja
+ *
+ */
 public class WunderList
 {
 	private static WunderList wunderList;
@@ -17,12 +21,21 @@ public class WunderList
 	private static String token;
 	private static String userId;
 
+	/**
+	 * 
+	 */
 	private WunderList()
 	{
 
 	}
 
-	// The caller should save the token in preference
+	/**
+	 * @param userName
+	 * @param password
+	 * @return
+	 * @throws AuthException
+	 * @throws NetworkException
+	 */
 	private static LoginResponse Login(String userName, String password)
 			throws AuthException, NetworkException
 	{
@@ -49,6 +62,10 @@ public class WunderList
 		return response;
 	}
 
+	/**
+	 * @return
+	 * @throws NetworkException
+	 */
 	public Me GetUserInfo() throws NetworkException
 	{
 		Me userInfo = null;
@@ -66,17 +83,28 @@ public class WunderList
 		return userInfo;
 	}
 
+	/**
+	 * @param newToken
+	 */
 	public void SetToken(String newToken)
 	{
 		token = newToken;
 
 	}
 
+	/**
+	 * @return
+	 */
 	public String GetToken()
 	{
 		return token;
 	}
 
+	/**
+	 * @return
+	 * @throws AuthException
+	 * @throws NetworkException
+	 */
 	private static boolean IsLoginRequired() throws AuthException,
 			NetworkException
 	{
@@ -111,6 +139,11 @@ public class WunderList
 		return false;
 	}
 
+	/**
+	 * @return
+	 * @throws AuthException
+	 * @throws NetworkException
+	 */
 	public List<WTask> GetTasks() throws AuthException, NetworkException
 	{
 		List<WTask> tasks;
@@ -135,6 +168,11 @@ public class WunderList
 		return tasks;
 	}
 
+	/**
+	 * @return
+	 * @throws AuthException
+	 * @throws NetworkException
+	 */
 	public List<WList> GetLists() throws AuthException, NetworkException
 	{
 		List<WList> lists;
@@ -159,6 +197,12 @@ public class WunderList
 
 	}
 
+	/**
+	 * @param newToken
+	 * @return
+	 * @throws AuthException
+	 * @throws NetworkException
+	 */
 	public static WunderList getInstance(String newToken) throws AuthException,
 			NetworkException
 	{
@@ -179,6 +223,13 @@ public class WunderList
 
 	}
 
+	/**
+	 * @param userName
+	 * @param password
+	 * @return
+	 * @throws AuthException
+	 * @throws NetworkException
+	 */
 	public static WunderList getInstance(String userName, String password)
 			throws AuthException, NetworkException
 	{
