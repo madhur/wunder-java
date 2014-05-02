@@ -11,7 +11,7 @@ import retrofit.RetrofitError;
 
 /**
  * @author Madhur Ahuja
- *
+ * 
  */
 public class WunderList
 {
@@ -194,6 +194,73 @@ public class WunderList
 		}
 
 		return lists;
+
+	}
+
+	public WList CreateList(String title) throws NetworkException,
+			AuthException
+	{
+		WList list = null;
+
+		try
+		{
+			list = service.CreateList(token, title);
+		}
+		catch (RetrofitError e)
+		{
+
+			HandleException(e);
+		}
+
+		return list;
+	}
+
+	public WTask CreateTask(String listId, String title, String starred, String due_date)
+			throws NetworkException, AuthException
+	{
+		WTask task = null;
+
+		try
+		{
+			task = service.CreateWunderTask(token, listId, title, starred, due_date);
+		}
+		catch (RetrofitError e)
+		{
+
+			HandleException(e);
+		}
+
+		return task;
+	}
+
+	public void DeleteList(String listId) throws NetworkException,
+			AuthException
+	{
+		try
+		{
+			service.DeleteList(token, listId);
+		}
+		catch (RetrofitError e)
+		{
+
+			HandleException(e);
+		}
+
+	}
+
+	private void HandleException(RetrofitError e) throws NetworkException,
+			AuthException
+	{
+
+		if (e.isNetworkError())
+			throw new NetworkException(APIConsts.NETWORK_ERROR);
+
+		if (e.getResponse().getStatus() == 401)
+		{
+			throw new AuthException(APIConsts.AUTH_ERROR, AuthError.AUTH_ERROR);
+		}
+		else
+			throw new AuthException(APIConsts.UNKNWOWN_RETROFIT_ERROR, AuthError.UNKNOWN);
 
 	}
 

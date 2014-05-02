@@ -61,6 +61,24 @@ public class Main
 				
 			}
 			
+			System.out.println("Creating a list named 'test'");
+			
+			WList list=wunderList.CreateList("Test");
+			
+			System.out.println("Created list with id " + list.getId());
+			
+			System.out.println("Creating task 'test task' in list: " + list.getTitle());
+			
+			WTask task=wunderList.CreateTask(list.getId(), "Test Task", "", "");
+			
+			System.out.println("Created task with id " + task.getId());
+			
+			System.out.println("Deleting the test list...");
+			
+			wunderList.DeleteList(list.getId());
+			
+			in.nextLine();
+			
 		}
 		catch (AuthException | NetworkException e)
 		{
