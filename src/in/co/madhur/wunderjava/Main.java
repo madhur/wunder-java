@@ -61,9 +61,6 @@ public class Main
 				
 			}
 			
-			
-			System.out.println("Creating a test task...");
-			//wunderList.
 		}
 		catch (AuthException | NetworkException e)
 		{
