@@ -1,5 +1,7 @@
-Unofficial WunderList API Client written in Java
-================================================
+Wunderlist API Client for Java
+==============================
+
+[![Build Status](https://travis-ci.org/madhur/wunder-java.svg?branch=master)](https://travis-ci.org/madhur/wunder-java)
 
 This is an official API Client for Wunderlist. The Wunderlist API is not yet open to public but it still can be accessed if we know the endpoints and the parameters.
 
@@ -9,8 +11,7 @@ Building
 
 The project can be opened in Eclipse. Alternatively, it can be built through gradle
 
-::
-
+```
 D:\Users\madhur\workspace\location\Wunderjava>gradle mainjar
 :mainjar UP-TO-DATE
 
@@ -22,6 +23,7 @@ D:\Users\madhur\workspace\location\Wunderjava>cd build
 D:\Users\madhur\workspace\location\Wunderjava\build>cd libs
 
 D:\Users\madhur\workspace\location\Wunderjava\build\libs>java -jar Wunderjava.jar
+```
 
 Examples
 --------
@@ -29,14 +31,14 @@ Examples
 Invoking the API is simple. There is a helper class `WunderList` which is basically a singleton and you have get its instance by providing the wunderlist `username` and `password`. Once we have
 the instance we can invoke the corresponding helper methods such as `GetLists` and `GetTasks`. 
 
-::
 
+```Java
 wunderList=WunderList.getInstance(username, password);
 
 List<WList> wlists=wunderList.GetLists();
 
 List<WTask> wTasks=wunderList.GetTasks();
-
+```
 
 Contributing
 ------------
