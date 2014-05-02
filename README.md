@@ -5,6 +5,10 @@ Wunderlist API Client for Java
 
 This is an official API Client for Wunderlist. The Wunderlist API is not yet open to public but it still can be accessed if we know the endpoints and the parameters.
 
+I have blogged about it here:
+[Decoding the hidden Wunderlist API (Part I)](http://www.madhur.co.in/blog/2014/05/02/decodewunderlistapi.html)
+[Decoding the hidden Wunderlist API (Part II)](http://www.madhur.co.in/blog/2014/05/02/decodewunderlistapi2.html)
+
 
 Building
 --------
@@ -35,9 +39,18 @@ the instance we can invoke the corresponding helper methods such as `GetLists` a
 ```Java
 wunderList=WunderList.getInstance(username, password);
 
+// Get the Wunderlist lists
 List<WList> wlists=wunderList.GetLists();
 
+// Get the Wunderlist Tasks
 List<WTask> wTasks=wunderList.GetTasks();
+
+// Create a tasks in Wunderlist
+WTask task=wunderList.CreateTask(list.getId(), "Test Task", "", "");
+
+// Delete a Wunderlist list
+wunderList.DeleteList(list.getId());
+
 ```
 
 Contributing
