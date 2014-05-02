@@ -5,9 +5,9 @@ Wunderlist API Client for Java
 
 This is an official API Client for Wunderlist. The Wunderlist API is not yet open to public but it still can be accessed if we know the endpoints and the parameters.
 
-I have blogged about it here:
-[Decoding the hidden Wunderlist API (Part I)](http://www.madhur.co.in/blog/2014/05/02/decodewunderlistapi.html)
-[Decoding the hidden Wunderlist API (Part II)](http://www.madhur.co.in/blog/2014/05/02/decodewunderlistapi2.html)
+I have blogged about it here:  
+[Decoding the hidden Wunderlist API (Part I)](http://www.madhur.co.in/blog/2014/05/02/decodewunderlistapi.html)  
+[Decoding the hidden Wunderlist API (Part II)](http://www.madhur.co.in/blog/2014/05/02/decodewunderlistapi2.html)  
 
 
 Building
