@@ -7,6 +7,7 @@ import in.co.madhur.wunderjava.api.model.WTask;
 
 import java.util.List;
 
+import retrofit.client.Response;
 import retrofit.http.DELETE;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
@@ -39,6 +40,6 @@ public interface WunderAPI
 	@GET(value = "/me/lists")
 	List<WList> GetLists(@Header("Authorization") String authorization);
 	
-	@DELETE(value="/me/lists/{list_id}")
-	void DeleteList(@Header("Authorization") String authorization, @Path("list_id") String listId);
+	@DELETE(value="/me/{list_id}")
+	Response DeleteList(@Header("Authorization") String authorization, @Path("list_id") String listId);
 }

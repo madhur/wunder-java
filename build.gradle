@@ -19,22 +19,14 @@ sourceSets {
 }
 
 jar {
+from files(sourceSets.main.output.classesDir)
+    from files(sourceSets.main.output.resourcesDir)
+    from {configurations.compile.collect {zipTree(it)}}
+    
   manifest { attributes 'Main-Class': 'in.co.madhur.wunderjava.Main' }
 }
 
 mainClassName = "in.co.madhur.wunderjava.Main"
-
-task mainjar(type: Jar) {
-    from files(sourceSets.main.output.classesDir)
-    from files(sourceSets.main.output.resourcesDir)
-    from {configurations.compile.collect {zipTree(it)}}
-
-    manifest {
-        attributes 'Main-Class': 'in.co.madhur.wunderjava.Main'
-    }
-}
-
-
 
 dependencies {
    

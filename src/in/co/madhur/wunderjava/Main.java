@@ -75,7 +75,7 @@ public class Main
 			
 			System.out.println("Deleting the test list...");
 			
-			wunderList.DeleteList(list.getId());
+			//wunderList.DeleteList(list.getId());
 			
 			in.nextLine();
 			
