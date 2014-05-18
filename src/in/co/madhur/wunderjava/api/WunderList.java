@@ -52,6 +52,9 @@ public class WunderList
 				throw new AuthException(APIConsts.AUTH_ERROR);
 			if (e.getResponse().getStatus() == 404)
 				throw new AuthException(APIConsts.USER_NOT_FOUND);
+			
+			System.out.println(e.getMessage());
+			throw e;
 
 		}
 

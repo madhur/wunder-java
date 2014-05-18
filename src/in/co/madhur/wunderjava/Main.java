@@ -1,7 +1,5 @@
 package in.co.madhur.wunderjava;
 
-import in.co.madhur.wunderjava.api.AuthException;
-import in.co.madhur.wunderjava.api.NetworkException;
 import in.co.madhur.wunderjava.api.WunderList;
 import in.co.madhur.wunderjava.api.model.Me;
 import in.co.madhur.wunderjava.api.model.WList;
@@ -80,7 +78,7 @@ public class Main
 			in.nextLine();
 			
 		}
-		catch (AuthException | NetworkException e)
+		catch (Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
