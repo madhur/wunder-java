@@ -3,7 +3,7 @@ Wunderlist API Client for Java (Deprecated)
 
 This repository has been depricated and is no longer in active development since Wunderlist has released its API publically.
 
-See (https://developer.wunderlist.com/documentation)[https://developer.wunderlist.com/documentation]
+See [https://developer.wunderlist.com/documentation](https://developer.wunderlist.com/documentation)
 
 [![Build Status](https://travis-ci.org/madhur/wunder-java.svg?branch=master)](https://travis-ci.org/madhur/wunder-java)
 
